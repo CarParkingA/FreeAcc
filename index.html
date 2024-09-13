@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Parking Multiplayer Account</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .btn-green {
+            background-color: #4CAF50;
+            color: white;
+            font-size: 24px;
+            padding: 20px 40px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .btn-green:hover {
+            background-color: #45a049;
+        }
+
+        .loading-animation {
+            display: none;
+            font-size: 24px;
+        }
+
+        .account-description {
+            display: none;
+            font-size: 24px;
+            margin-top: 20px;
+        }
+
+        .btn-download {
+            display: none;
+            background-color: #007BFF;
+            color: white;
+            font-size: 18px;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .btn-download:hover {
+            background-color: #0056b3;
+        }
+
+        @keyframes loading {
+            0% { content: "Загрузка."; }
+            33% { content: "Загрузка.."; }
+            66% { content: "Загрузка..."; }
+        }
+
+        .loading-animation::after {
+            content: "Загрузка.";
+            animation: loading 1s infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button class="btn-green" id="getAccountBtn">Получить аккаунт Car Parking Multiplayer</button>
+        <div class="loading-animation" id="loadingAnimation"></div>
+        <div class="account-description" id="accountDescription"></div>
+        <button class="btn-download" id="downloadBtn" onclick="window.location.href='https://ji.basesfiles.com/getfile/OEFF?title=CarParkingAccount'">
+            Скачать Логин и пароль от аккаунта
+        </button>
+    </div>
+
+    <script>
+        const descriptions = [
+            '🚀 АККАУНТ 🚀🏎️Mercedes E63 (1695HP)🏎️💵50кк ВИРТ💵🟡30к МОНЕТ🟡🚀В16🚀 🚨МИГАЛКИ🚨',
+            '🚀 АККАУНТ 🚀🏎️Toyota Camry (1695HP)🏎️💵50кк ВИРТ💵🟡30к МОНЕТ🟡🚀В16🚀 🚨МИГАЛКИ🚨',
+            '🚀 АККАУНТ 🚀🏎️BMW i8😍(1695HP)🏎️💵50кк ВИРТ💵🟡30к МОНЕТ🟡🚀В16🚀 🚨МИГАЛКИ🚨',
+            '🚀 АККАУНТ 🚀😍BMW X6(1695HP)😍💵50КК ВИРТ💵🟡30К МОНЕТ🟡',
+            '🚀 АККАУНТ 🚀😍BMW M4(1695HP)😍💵50КК ВИРТ💵🟡30К МОНЕТ🟡',
+            '🚀 АККАУНТ 🚀😍BMW M5 M4 M8(1695HP)😍💵50КК ВИРТ💵🟡30К МОНЕТ🟡🚀В16🚀',
+            '🚀 АККАУНТ 🚀🏎️NISSAN GT-R(1695)🏎️💵50кк ВИРТ💵🟡30к монет🟡🚀В16🚀',
+        ];
+
+        document.getElementById('getAccountBtn').addEventListener('click', function() {
+            this.style.display = 'none';
+            const loadingAnimation = document.getElementById('loadingAnimation');
+            const accountDescription = document.getElementById('accountDescription');
+            const downloadBtn = document.getElementById('downloadBtn');
+
+            loadingAnimation.style.display = 'block';
+
+            setTimeout(function() {
+                loadingAnimation.style.display = 'none';
+                const randomDescription = descriptions[Math.floor(Math.random() * descriptions.length)];
+                accountDescription.textContent = randomDescription;
+                accountDescription.style.display = 'block';
+                downloadBtn.style.display = 'block';
+            }, 3000);
+        });
+    </script>
+</body>
+</html>
